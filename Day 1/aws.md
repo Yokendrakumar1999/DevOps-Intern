@@ -8,5 +8,7 @@ with less amount of time
 ## Advantage AWS Elastic Bean
 
 highly scalable
+
 fast and simple to begin
+
 offers a quick deployment 
