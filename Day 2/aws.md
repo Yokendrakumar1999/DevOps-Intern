@@ -16,3 +16,7 @@
  ### NACL Apply at subnet level 
  ### security group for allow traffic but NACL For deny and allow traffic  
  ### vpc -> subnet -> route table -> internet gateway -> security group -> nacl +api ->last point 
+
+ ## Route 53 -> A reliable way to route users to internet applications. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+
+<p> Domain names, Hosted zones ,Health checks , Traffic flow, Resolver</p>
