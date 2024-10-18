@@ -18,13 +18,20 @@
  ### vpc -> subnet -> route table -> internet gateway -> security group -> nacl +api ->last point 
 
  ## Route 53 -> A reliable way to route users to internet applications. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
-<ol>
+ 
+###  main functions of  Route 53 
+<ul>
 <li>Domain names</li>
 <li>Hosted zones</li>
 <li>Health checks</li>
 <li>Traffic flow</li>
-<li>Resolver<</li>
-</ol>
+<li>Resolver</li>
+</ul>
+
 ## Benefits and features
-<p>Highly available and reliable</p>
-<p>Designed for use with other AWS services</p>
+<ul>
+<li><p>Highly available and reliable</p></li>
+<li><p>Designed for use with other AWS services</p></li>
+<li><p>Simple</p></li>
+<li><p>Flexible</p></li>
+</ul>
