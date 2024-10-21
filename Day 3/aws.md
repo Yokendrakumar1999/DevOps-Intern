@@ -1,3 +1,10 @@
+## Flutter frontend and Spring Boot backend deployed on AWS
+<div align="center">
+  <img alt="Demo" src="../img/project-1.png" />
+</div>
+<a href="https://lucid.app/lucidchart/01542bb8-fa45-4a04-a3b7-3b49f0f9f74f/edit?viewport_loc=-1455%2C-200%2C3493%2C1615%2C0_0&invitationId=inv_96ef409f-195d-42a4-9085-d418d63140f4">link</a>
+
+
 Estimating the cost for your **end-to-end DevOps project** using **AWS Elastic Beanstalk** for the **Spring Boot backend** and **Amazon ECS** for the **Flutter frontend**, targeting **5,000 to 10,000 users**, can vary based on multiple factors such as instance types, usage patterns, and data transfer. Below is a detailed breakdown of the estimated monthly costs for each component involved in your architecture.
 
 ### **Estimated Monthly Cost Breakdown**
@@ -41,6 +48,9 @@ Estimating the cost for your **end-to-end DevOps project** using **AWS Elastic B
 
 ### **Conclusion**
 The total estimated monthly cost for your AWS infrastructure for the **end-to-end DevOps project** is approximately **$182.62**. 
+
+
+
 
 
 
