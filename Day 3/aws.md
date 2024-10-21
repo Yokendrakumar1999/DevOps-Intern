@@ -1,81 +1,43 @@
- **AWS services** involved in an **end-to-end DevOps setup** for a **Flutter frontend** and a **Spring Boot backend**, specifically designed to handle **5,000 to 10,000 users**. This includes a rough monthly cost estimation, highlighting how each service contributes to the overall architecture and its cost.
+Estimating the cost for your **end-to-end DevOps project** using **AWS Elastic Beanstalk** for the **Spring Boot backend** and **Amazon ECS** for the **Flutter frontend**, targeting **5,000 to 10,000 users**, can vary based on multiple factors such as instance types, usage patterns, and data transfer. Below is a detailed breakdown of the estimated monthly costs for each component involved in your architecture.
 
-### **AWS Services Overview**
+### **Estimated Monthly Cost Breakdown**
 
-#### **1. Frontend (Flutter)**
-- **Amazon S3**
-  - **Purpose**: Stores static files for the Flutter web application.
-  - **Cost**: 
-    - Storage Cost: $0.023 per GB.
-    - **Monthly Estimate**: $0.0023 (for ~100 MB of storage).
+| **Service**                         | **Description**                                          | **Estimated Monthly Cost (USD)** |
+|-------------------------------------|---------------------------------------------------------|-----------------------------------|
+| **Elastic Beanstalk**               | EC2 instances for Spring Boot backend                   |                                   |
+| - EC2 Instance (t3.medium)          | 1 instance (2 vCPUs, 4 GiB RAM)                        | $30                                |
+| - Load Balancer                     | For distributing traffic to EC2 instances               | $18                                |
+| **Amazon ECS**                      | Container service for Flutter frontend                  |                                   |
+| - Fargate Pricing                   | Assuming 2 vCPUs and 4 GiB of memory for one task      | $72.07                             |
+| **Amazon ECR**                      | Container registry for storing images                   | $0.50 (assuming 5 GB of storage) |
+| **Amazon RDS**                      | Managed database service for application data            |                                   |
+| - DB Instance (db.t3.medium)       | (2 vCPUs, 4 GiB RAM)                                   | $30                                |
+| - Storage (30 GB)                  | SSD storage                                            | $3                                 |
+| **Amazon S3**                       | For static assets (optional)                            | $1.15 (assuming 50 GB)           |
+| **Amazon Route 53**                | Domain management and DNS services                      | $0.90                              |
+| **Amazon CloudWatch**               | Monitoring and logging services                         | $10                                 |
+| **AWS Data Transfer**               | Outbound data transfer (200 GB)                        | $18                                 |
+| **VPC and Security Groups**         | No direct costs, included in other services            |                                   |
 
-- **Amazon CloudFront**
-  - **Purpose**: Content Delivery Network (CDN) to distribute the Flutter frontend globally with low latency.
-  - **Cost**: 
-    - Data Transfer: $0.085 per GB (for the first 10 TB).
-    - **Monthly Estimate**: $4.25 (assuming ~50 GB data transfer).
+### **Total Estimated Monthly Cost**
 
-#### **2. Backend (Spring Boot)**
-- **Amazon EC2**
-  - **Purpose**: Runs the Spring Boot application.
-  - **Instance Type**: **t3.medium** (2 vCPUs, 4 GiB RAM).
-  - **Cost**: 
-    - $0.0416 per hour.
-    - **Monthly Estimate**: ~$30.00 (24/7 operation).
+| **Total**                           | **Estimated Monthly Cost (USD)** |
+|-------------------------------------|-----------------------------------|
+| **Elastic Beanstalk**               | $48                              |
+| **Amazon ECS**                      | $72.07                           |
+| **Amazon ECR**                      | $0.50                            |
+| **Amazon RDS**                      | $33 (DB + Storage)              |
+| **Amazon S3**                       | $1.15                            |
+| **Amazon Route 53**                | $0.90                            |
+| **Amazon CloudWatch**               | $10                              |
+| **AWS Data Transfer**               | $18                              |
+| **Total Estimated Cost**            | **$182.62**                      |
 
-- **Elastic Load Balancer (ALB)**
-  - **Purpose**: Distributes incoming application traffic across multiple EC2 instances.
-  - **Cost**: 
-    - $0.0225 per hour + $0.008 per LCU.
-    - **Monthly Estimate**: ~$16.20 (based on usage).
-
-#### **3. Database (Amazon RDS)**
-- **Amazon RDS**
-  - **Purpose**: Manages the relational database for the backend (MySQL or PostgreSQL).
-  - **Instance Type**: **db.t3.medium** (2 vCPUs, 4 GiB RAM).
-  - **Cost**: 
-    - $0.0416 per hour.
-    - **Monthly Estimate**: ~$30.00 (24/7 operation).
-
-- **Storage**: 
-  - **Type**: General Purpose SSD.
-  - **Size**: 20 GB.
-  - **Cost**: $0.115 per GB.
-  - **Monthly Estimate**: $2.30.
-
-#### **4. Monitoring and Logging**
-- **Amazon CloudWatch**
-  - **Purpose**: Provides monitoring for EC2, RDS, and application logs.
-  - **Cost**: Basic monitoring included in the free tier; estimate ~$5 for additional logs and metrics.
-
-#### **5. Domain Management**
-- **Amazon Route 53**
-  - **Purpose**: Manages domain name registration and routing of user traffic to the application.
-  - **Cost**: 
-    - Hosted Zone: $0.50 per month.
-    - DNS Queries: $0.40 per million queries (assuming ~1 million).
-    - **Monthly Estimate**: $0.90.
-
-### **Total Estimated Monthly Cost Breakdown**
-
-| **Service**                     | **Estimated Cost (USD)** |
-|----------------------------------|--------------------------|
-| Amazon S3 (Storage)             | $0.0023                  |
-| Amazon CloudFront                | $4.25                    |
-| Amazon EC2 (Backend)            | $30.00                   |
-| Elastic Load Balancer            | $16.20                   |
-| Amazon RDS (Instance)           | $30.00                   |
-| Amazon RDS (Storage)            | $2.30                    |
-| Amazon CloudWatch                | $5.00                    |
-| Amazon Route 53 (Hosted Zone)   | $0.50                    |
-| Amazon Route 53 (DNS Queries)   | $0.40                    |
-| **Total Estimated Cost**         | **$89.77**               |
-
-### **Scalability and Cost Efficiency Considerations**
-- **Auto Scaling**: Set up auto-scaling for EC2 instances to automatically adjust the number of instances based on traffic, ensuring high availability and cost efficiency.
-- **Elastic Load Balancer**: Helps manage the incoming traffic efficiently, preventing downtime during high traffic periods.
-- **Spot Instances**: Consider using spot instances for non-critical workloads to save costs on EC2.
-- **Route 53**: Use routing policies (e.g., latency-based routing) to improve user experience and reduce latency.
+### **Key Considerations**
+1. **Instance Types**: The costs can vary significantly based on the EC2 instance types chosen for Elastic Beanstalk and RDS.
+2. **Scaling**: If you plan to use auto-scaling features for either ECS or Elastic Beanstalk, costs can increase during peak usage.
+3. **Data Transfer**: If your application generates more outbound data, this can affect the overall cost.
+4. **Load Balancing**: Using additional load balancers for ECS might also incur extra costs.
 
 ### **Conclusion**
-This setup is designed for a scalable and efficient architecture to handle up to **10,000 users** while maintaining cost-effectiveness. The estimated monthly cost of approximately **$89.77** gives you a solid foundation for your application. Adjustments can be made based on actual usage patterns and traffic, ensuring you stay within budget while optimizing performance.
+The total estimated monthly cost for your AWS infrastructure for the **end-to-end DevOps project** is approximately **$182.62**. 
