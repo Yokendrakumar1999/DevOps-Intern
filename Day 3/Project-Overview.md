@@ -1,4 +1,4 @@
- **end-to-end DevOps pipeline** for your project involving a **Flutter frontend** and **Spring Boot backend** on **AWS**, with a focus on **cost efficiency**, **scalability**, and **automation**. This setup will help handle traffic for 5,000 to 10,000 users while ensuring your application is scalable and cost-effective.
+ **End-to-end DevOps pipeline** for your project involving a **Flutter frontend** and **Spring Boot backend** on **AWS**, with a focus on **cost efficiency**, **scalability**, and **automation**. This setup will help handle traffic for 5,000 to 10,000 users while ensuring your application is scalable and cost-effective.
 
 ---
 
