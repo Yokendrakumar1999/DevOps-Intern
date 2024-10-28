@@ -1,7 +1,6 @@
-To document the installation and setup of Docker, pulling an image, and running a container, ***background worker and background file processor***
 ---
+## To document the installation and setup of Docker, pulling an image, and running a container, background worker and background file processor
 
-## Docker Installation and Background File Processor Setup on Ubuntu
 Certainly, here’s the organized setup with for setting up Docker on Ubuntu.
 
 ---
