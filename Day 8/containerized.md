@@ -6,7 +6,7 @@ To document the installation and setup of Docker, pulling an image, and running 
 
 ### Step 1: Set Up Docker on Ubuntu
 
-1.1. **Update and Install Required Certificates and Tools**
+1. **Update and Install Required Certificates and Tools**
    ```bash
   # Add Docker's official GPG key:
 sudo apt-get update
@@ -23,7 +23,7 @@ echo \
 sudo apt-get update```
 
 
-2.2. **Install Docker Packages**
+2. **Install Docker Packages**
    ```bash
    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
