@@ -31,7 +31,7 @@
 
 1. **Pull the Background File Processor Image**
    ```bash
-   docker pull trudosys/background-file-processor:latest39
+   docker pull ground-file-processor:latest39
    ```
 
 2. **Check Available Docker Images**
@@ -42,7 +42,7 @@
 3. **Run the Background File Processor Container**
    - Run the container with a specific port mapping to **8092** and a custom container name.
    ```bash
-   docker run -d -p 8092:8092 --name background-processor trudosys/background-file-processor:latest39
+   docker run -d -p 8092:8092 --name background-processor ground-file-processor:latest39
    ```
 
 4. **Verify Running Containers**
